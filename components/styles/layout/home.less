@@ -1,0 +1,137 @@
+/* Home Style */
+
+section {
+	&.banner {
+		width: 100%;
+		padding: 0;
+		display: table;
+		margin: 0;
+		height: 100vh;
+		position: relative;
+		background-image: url(../../public/images/headerBackground.jpg);
+		background-size: cover;
+		background-size-height: 100%;
+		background-size-width: 100%;
+		.container {
+			height: 100vh;
+			.bannerContent {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				color: @white;
+				text-align: center;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				-ms-transform: translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+				h1 {
+					text-transform: uppercase;
+				}
+				.btn.red {
+					color: @white;
+					background-color: @blue;
+					border-color: @blue;
+					line-height: 5rem;
+					padding: 0 2rem;
+					font-size: 1.8rem;
+					margin-top: 2.5rem;
+					&:extend(.montserratmedium);
+					&:extend(.circle);
+					&:hover {
+						color: @blue;
+						background-color: @white;
+						border-color: @white;
+					}
+				}
+			}
+		}
+	}
+	&.newProducts, &.neatProducts {
+		padding: 0rem 0 2rem 0;
+		.container {
+			border-bottom: 1px solid @darkgrey;
+			padding-bottom: 25px;
+			margin-bottom: 15px;
+		}
+		h2 {
+			&:extend(.montserratbold);
+			border-bottom: 1px solid @darkgrey;
+			text-align: center;
+		}
+		.productImage {
+			position: relative;
+			img {
+				width: 100%;
+				border: 1px solid @darkgrey;
+				padding: 3px;
+			}
+		}
+		.productName {
+			h3 {
+				&:extend(.montserratbold);
+			}
+		}
+		.productContent {
+			margin: 10px 0 5px 0;
+		}
+		.productPrice {
+			margin: 0px 0 15px 0;
+		}
+		.tranRedBorder {
+			margin-top: 30px;
+		}
+		.blueBtn, .whiteBtn {
+			width: 100%;
+			float: left;
+			text-align: center;
+		}
+	}
+	&.neatProducts {
+		padding: 0;
+		.container {
+			padding-bottom: 28px;
+    		margin-bottom: 5px;
+		}
+	}
+	&.special {
+		.container {
+			border-bottom: 1px solid @darkgrey;
+			padding-bottom: 25px;
+			margin-bottom: 15px;
+			a {
+				color: @black;
+				background-color: @aqua;
+				border: 1px solid @darkgrey;
+				padding: 15px;
+				width: 100%;
+				float: left;
+				font-family: 'montserratmedium';
+				font-size: 20px;
+				&:hover {
+					color: @white;
+					background-color: @blue;
+					border-color: @blue;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&.topProducts {
+		padding: 2rem 0 3rem 0;
+		border-bottom: 8px solid @darkgrey;
+		.productImage {
+			float: left;
+			margin-right: 15px;
+			img {
+				border: 1px solid @darkgrey;
+				padding: 3px;
+			}
+		}
+		.productContent {
+			font-size: 12px;
+			h4 {
+				display: block;
+			}
+		}
+	}
+}

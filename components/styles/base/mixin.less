@@ -1,0 +1,138 @@
+/* Mixin Style */
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+/*.font-size(10)*/
+
+.line-height(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  line-height: ~"@{pxValue}px";
+  line-height: ~"@{remValue}rem";
+}
+/*.line-height(10)*/
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+/*.border-radius(5px);*/
+
+// Less font-smoothing mixin
+.font-smoothing(@value) when (@value = on) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.font-smoothing(@value) when (@value = off) {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+/*.font-smoothing(on);*/
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 		@opacity;
+}
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+  text-shadow: @string;
+}
+
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow:    @string;
+  box-shadow:         @string;
+}
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:  @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:   @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.transition(@property:all, @duration:0.2s, @ease:ease-in-out) {
+  -webkit-transition: @property @duration @ease;
+  -moz-transition: @property @duration @ease;
+  -o-transition: @property @duration @ease;
+  -ms-transition: @property @duration @ease;
+  transition: @property @duration @ease;
+}
+
+.translate (@x, @y:0) {
+	-webkit-transform:       translate(@x, @y);
+	-moz-transform: 	 translate(@x, @y);
+	-ms-transform: 		 translate(@x, @y);
+	-o-transform: 		 translate(@x, @y);
+}
+
+.svg-background-image(@svg,@fallback){
+	background-image: url('../images/@{fallback}');
+	background-image: url('../images/@{svg}'), none;
+}
+/*
+	Usage:
+	.svg-background-image('my.svg','fallback.png');
+*/
+
+.placeholder(@color) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+	    color: @color;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+	    color: @color;
+	}
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: @blue;
+        background: transparent;
+    }
+}
+
+/*
+  This mixin can be used to set the object-fit:
+  .object-fit(contain);
+  or object-fit and object-position:
+  .object-fit(cover, top);
+*/
+.object-fit(@fit: fill, @position) {
+  -o-object-fit: @fit;
+     object-fit: @fit;
+  -o-object-position: @position;
+     object-position: @position;
+  font-family: 'object-fit: @{fit}; object-position: @{position}';
+}
+
+.object-fit(@fit: fill){
+  -o-object-fit: @fit;
+     object-fit: @fit;
+  font-family: 'object-fit: @{fit}';
+}
+
+
+
+/* End Mixin Style */

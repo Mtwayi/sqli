@@ -1,0 +1,45 @@
+/* Header Style */
+.navbar-wrapper {
+    background-color: @grey;
+    .navbar-inverse {
+        background-color: transparent;
+        border-color: transparent;
+        margin-bottom: 0px;
+    }
+    .wrapper {
+        width: 100%;
+        ul {
+            display: inline-block;
+            li {
+                float: left;
+                a {
+                    float: left;
+                    height: 50px;
+                    padding: 15px 15px;
+                    font-size: 18px;
+                    line-height: 20px;
+                    &:extend(.montserratregular);
+                    color: @blue;  
+                    font-size: 1.5rem;
+                    &:hover {
+                        color: @black;
+                        text-decoration: none;
+                    }
+                    &.navbar-brand{
+                        color: @black;
+                    }
+                }
+                &.active {
+                    a {
+                        color: @black;
+                        background-color: transparent;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .navbar-collapse {
+            float: right;
+        }
+    }
+}

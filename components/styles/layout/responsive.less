@@ -1,0 +1,161 @@
+/* Responsive Style */
+
+@media (max-width: 767px) {
+	.navbar-inverse {
+		.navbar-brand-nav {
+			li {
+				a {
+					padding: 15px 10px !important;
+				}    
+			}
+		}
+		.navbar-toggle {
+			background-color: @blue;
+			border-color: @blue;
+			margin-right: 0;
+			&:hover, &:focus {
+				background-color: @black;
+				border-color: @black;
+			}
+		}
+		.navbar-collapse {
+			width: 100%;
+			background-color: @blue;
+			border-color: @white;
+			padding: 0;
+			ul {
+				margin: 0px;
+				float: left;
+				width: 100%;
+				li {
+					border-bottom: 1px solid @white;
+					float: left;
+					width: 100%;
+					a {
+						width: 100%;
+						color: @white;
+					}
+					&:hover, &:focus, &.active {
+						background-color: @black;
+						a {
+							color: @white !important;
+						}
+					}
+					&.active {
+						a {
+							color: @white !important;
+						}
+					}
+					&.tranWhiteBorder {
+						border-bottom: 0;
+						margin-top: 0.5em;
+						display: inline-block;
+						a {
+							 margin-top: 0px !important;
+							 &:hover, &:focus { 
+								color: @blue !important;
+								background-color: @white;
+								border-color: @white;
+							 }
+						}
+					}
+				}
+			}
+		}
+	}
+	section {
+		&.slider {
+			.carousel {
+				.carousel-inner {
+					height: 350px;
+					.carousel-item {
+						h1 {
+							top: 35%;
+    						left: 44%;
+						}
+					}
+				}
+			}
+
+		}
+		&.topProducts {
+			.block {
+				width: 100%;
+				.productContent {
+					h4 {
+						padding-top: 1rem;
+					}
+				}
+			}
+		}
+		&.footer {
+			ul {
+				padding-bottom: 3rem;
+				border-bottom: 1px solid @darkgrey;
+				margin-bottom: 3rem;
+				&.last {
+					padding-bottom: 0rem;
+					border-bottom: 0px solid @darkgrey;
+					margin-bottom: 0rem;
+				}
+				li {
+					&:nth-last-child(1) {
+						padding-bottom: 0rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	section {
+		&.slider {
+			.carousel {
+				.carousel-inner {
+					height: 300px;
+					.carousel-item {
+						h1 {
+							top: 32%;
+    						left: 40%;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	section {
+		&.slider {
+			.carousel {
+				.carousel-inner {
+					.carousel-item {
+						h1 {
+    						left: 36%;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	section {
+		&.slider {
+			.carousel {
+				.carousel-inner {
+					.carousel-item {
+						h1 {
+    						left: 33%;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
